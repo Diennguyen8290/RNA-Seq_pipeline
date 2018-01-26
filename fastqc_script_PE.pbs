@@ -1,0 +1,16 @@
+#PBS -N fastqc_${IN}
+#PBS -e fastqc_${IN}.error
+#PBS -o fastqc_${IN}.out
+#PBS -l nodes=1:ppn=14
+#PBS -l mem=10000MB
+#PBS -l vmem=10000MB
+#PBS -l pmem=10000MB
+#PBS -l walltime=10:00:00
+#PBS -q cmb
+#!/bin/bash
+cd "$PBS_O_WORKDIR"
+
+echo "fastqc -o ${IN}_1.fastq"
+fastqc ${IN}_1.fastq
+echo "fastqc -o ${IN}_2.fastq"
+fastqc ${IN}_2.fastq
