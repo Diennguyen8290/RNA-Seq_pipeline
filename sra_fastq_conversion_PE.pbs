@@ -1,0 +1,15 @@
+#PBS -S /bin/bash
+#PBS -N sra->fastqc_conversion_${IN}
+#PBS -e sra_fastqc_conversion_${IN}.err
+#PBS -o sra_fastqc_conversion_${IN}.out
+#PBS -l nodes=1:ppn=14
+#PBS -l mem=10000MB
+#PBS -l vmem=10000MB
+#PBS -l pmem=10000MB
+#PBS -l walltime=3:00:00
+#PBS -q cmb
+#!/bin/bash
+cd "$PBS_O_WORKDIR"
+
+echo "fastq-dump --split-files -I ${IN}.sra"
+fastq-dump --split-files -I ${IN}.sra
