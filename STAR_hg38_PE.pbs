@@ -1,5 +1,3 @@
-#PBS -S /bin/bash
-#PBS -M dmanahan@usc.edu
 #PBS -N STAR_map_${IN}
 #PBS -e STAR_map_${IN}.error
 #PBS -o STAR_map_${IN}.out
@@ -12,7 +10,7 @@
 #!/bin/bash
 cd "$PBS_O_WORKDIR"
 
-ref_genome=/staging/as/dmanahan/STAR_index
+ref_genome=/staging/as/dmanahan/STAR_index_hg38
 gtf_file=/staging/as/dmanahan/gencode.v27.annotation.gtf
 
 echo "/home/cmb-00/as/dmanahan/STAR-2.5.3a/bin/Linux_x86_64/STAR --outFileNamePrefix ${IN} --quantMode GeneCounts --readFilesCommand cat --outSAMtype BAM SortedByCoordinate --bamRemoveDuplicatesType UniqueIdentical --runThreadN 14 --outBAMsortingThreadN 14 --outWigType wiggle --outWigStrand Unstranded --outWigNorm RPM --genomeDir ${ref_genome} --readFilesIn ${IN}.1_val_1.fq ${IN}.2_val_2.fq"
