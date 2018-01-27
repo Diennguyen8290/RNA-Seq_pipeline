@@ -1,0 +1,29 @@
+#PBS -N STAR_map_${IN}
+#PBS -e STAR_map_${IN}.error
+#PBS -o STAR_map_${IN}.out
+#PBS -l nodes=1:ppn=14
+#PBS -l mem=50000MB
+#PBS -l vmem=50000MB
+#PBS -l pmem=50000MB
+#PBS -l walltime=10:00:00
+#PBS -q cmb
+#!/bin/bash
+cd "$PBS_O_WORKDIR"
+
+ref_genome=/staging/as/dmanahan/STAR_index_hg38
+gtf_file=/staging/as/dmanahan/gencode.v27.annotation.gtf
+
+echo "/home/cmb-00/as/dmanahan/STAR-2.5.3a/bin/Linux_x86_64/STAR --outFileNamePrefix ${IN} --quantMode GeneCounts --readFilesCommand cat --outSAMtype BAM SortedByCoordinate --bamRemoveDuplicatesType UniqueIdentical --runThreadN 14 --outBAMsortingThreadN 14 --outWigType wiggle --outWigStrand Unstranded --outWigNorm RPM --genomeDir ${ref_genome} --readFilesIn ${IN}_trimmed.fq"
+
+/home/cmb-00/as/dmanahan/STAR-2.5.3a/bin/Linux_x86_64/STAR --outFileNamePrefix ${IN} \
+      --quantMode GeneCounts \
+      --readFilesCommand cat \
+      --outSAMtype BAM SortedByCoordinate \
+      --bamRemoveDuplicatesType UniqueIdentical \
+      --runThreadN 14 \
+      --outBAMsortingThreadN 14 \
+      --outWigType wiggle \
+      --outWigStrand Unstranded \
+      --outWigNorm RPM \
+      --genomeDir ${ref_genome} \
+      --readFilesIn ${IN}_trimmed.fq
