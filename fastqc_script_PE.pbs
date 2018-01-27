@@ -10,7 +10,7 @@
 #!/bin/bash
 cd "$PBS_O_WORKDIR"
 
-echo "fastqc -o ${IN}_1.fastq"
+echo "fastqc ${IN}_1.fastq"
 fastqc ${IN}_1.fastq
-echo "fastqc -o ${IN}_2.fastq"
+echo "fastqc ${IN}_2.fastq"
 fastqc ${IN}_2.fastq
