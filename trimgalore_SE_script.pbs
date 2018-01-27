@@ -1,0 +1,14 @@
+#PBS -N SE_TrimGalore_${IN}
+#PBS -e SE_TrimGalore_${IN}.error
+#PBS -o SE_TrimGalore_${IN}.out
+#PBS -l nodes=1:ppn=14
+#PBS -l mem="10000MB"
+#PBS -l pmem="10000MB"
+#PBS -l vmem="10000MB"
+#PBS -l walltime=10:00:00
+#PBS -q cmb
+#!/bin/bash
+cd "$PBS_O_WORKDIR"
+
+echo "/home/cmb-00/as/dmanahan/TrimGalore-0.4.3/trim_galore --fastqc ${IN}.fastq"
+/home/cmb-00/as/dmanahan/TrimGalore-0.4.3/trim_galore --fastqc ${IN}.fastq
