@@ -10,5 +10,5 @@
 #!/bin/bash
 cd "$PBS_O_WORKDIR"
 
-echo "/home/cmb-00/as/dmanahan/TrimGalore-0.4.3/trim_galore --fastqc ${IN}.fastq"
+
 /home/cmb-00/as/dmanahan/TrimGalore-0.4.3/trim_galore --fastqc ${IN}.fastq
