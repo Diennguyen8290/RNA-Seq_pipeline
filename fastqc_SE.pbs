@@ -10,5 +10,4 @@
 #!/bin/bash
 cd "$PBS_O_WORKDIR"
 
-echo "fastqc ${IN}.fastq"
 fastqc ${IN}.fastq
