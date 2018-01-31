@@ -10,10 +10,8 @@
 #!/bin/bash
 cd "$PBS_O_WORKDIR"
 
-ref_genome=/staging/as/dmanahan/STAR_index_hg38
-gtf_file=/staging/as/dmanahan/gencode.v27.annotation.gtf
-
-echo "/home/cmb-00/as/dmanahan/STAR-2.5.3a/bin/Linux_x86_64/STAR --outFileNamePrefix ${IN} --quantMode GeneCounts --readFilesCommand cat --outSAMtype BAM SortedByCoordinate --bamRemoveDuplicatesType UniqueIdentical --runThreadN 14 --outBAMsortingThreadN 14 --outWigType wiggle --outWigStrand Unstranded --outWigNorm RPM --genomeDir ${ref_genome} --readFilesIn ${IN}_trimmed.fq"
+ref_genome=~/cmb/STAR_index_hg38
+gtf_file=~/cmb/gencode.v27.annotation.gtf
 
 /home/cmb-00/as/dmanahan/STAR-2.5.3a/bin/Linux_x86_64/STAR --outFileNamePrefix ${IN} \
       --quantMode GeneCounts \
