@@ -10,4 +10,4 @@
 #!/bin/bash
 cd "$PBS_O_WORKDIR"
 
-/home/cmb-00/as/dmanahan/TrimGalore-0.4.3/trim_galore --fastqc ${IN}.fastq
+trim_galore --fastqc ${IN}.fastq
