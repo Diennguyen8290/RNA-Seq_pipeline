@@ -10,5 +10,4 @@
 #!/bin/bash
 cd "$PBS_O_WORKDIR"
 
-echo "fastq-dump -I ${IN}.sra"
 fastq-dump -I ${IN}.sra
