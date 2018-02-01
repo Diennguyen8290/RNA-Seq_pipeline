@@ -13,7 +13,7 @@ cd "$PBS_O_WORKDIR"
 ref_genome=~/cmb/STAR_index_hg38
 gtf_file=~/cmb/gencode.v27.annotation.gtf
 
-/home/cmb-00/as/dmanahan/STAR-2.5.3a/bin/Linux_x86_64/STAR --outFileNamePrefix ${IN} \
+STAR --outFileNamePrefix ${IN} \
       --quantMode GeneCounts \
       --readFilesCommand cat \
       --outSAMtype BAM SortedByCoordinate \
