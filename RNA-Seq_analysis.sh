@@ -1,8 +1,5 @@
 #SET YOUR VARIABLES HERE
 
-#Specify the filename under which your GEO accession list is saved.
-GEO_list='insert filename'
-
 #Specify whether the library in question is single-end ('SE') or paired-end ('PE').
 library='SE or PE'
 
@@ -12,7 +9,7 @@ organism='hg38 or Rnor6.0'
 #######################################################################################################
 
 #FASTQ-DUMP
-for i in $(cat ${GEO_list}); do
+for i in $(cat accession_list); do
   qsub -v IN=${i} ../fastq-dump_${library}.pbs &
 done
 
@@ -34,7 +31,7 @@ else
 fi
 
 #FASTQC
-for i in $(cat ${GEO_list}); do
+for i in $(cat accession_list); do
   qsub -v IN=${i} ../fastqc_${library}.pbs &
 done
 
@@ -56,7 +53,7 @@ else
 fi
 
 #TRIMGALORE!
-for i in $(cat ${GEO_list}); do
+for i in $(cat accession_list); do
   qsub -v IN=${i}  ../trimgalore_${library}.pbs &
 done
 
@@ -78,17 +75,17 @@ else
 fi
 
 #STAR
-for i in $(cat ${GEO_list}); do
+for i in $(cat accession_list); do
   qsub -v IN=${i} ../STAR_${organism}_${library}.pbs &
 done
 
-for i in $(cat ${GEO_list}); do
+for i in $(cat accession_list); do
   until [ -f ${i}Aligned.sortedByCoord.out.bam ]; do
     sleep 5
   done
 done
 
 #HTSeq
-for i in $(cat ${GEO_list}); do
+for i in $(cat accession_list); do
   qsub -v IN=${i} ../HTSeq-counts.pbs &
 done
