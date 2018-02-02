@@ -20,7 +20,7 @@ Important!  All scripts in this repository are set with paths relative to your d
 
 To generate count matrices from raw .sra files:
   
-  Download your dataset from GEO.  See Downloading_GEO_datasets.pdf
+  Download your dataset from GEO.  See Downloading_GEO_datasets.pdf in this repository.
   
     ../downloads.sh
   
