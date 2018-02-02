@@ -8,17 +8,25 @@ and make all scripts executable with
 
     chmod 775 *
 
+For each of your datasets, create a sub-directory (hence forth referred to here as a "data directory") within your working directory
+    
+    mkdir data
+
+Important!  All scripts in this repository are set with paths relative to your data directories.  You must operate all scripts FROM your data directories!
+
+    cd data
+
 To generate count matrices from raw .sra files:
-  Create a sub-directory in which all files from a dataset will be stored (henceforth referred to as the "data directory").
-  Download your dataset using downloads.sh
+  Download your dataset
+  
+    downloads.sh
+  
   Edit the variables in RNA-Seq_analysis.sh to reflect the parameters of your data.
     
-      nano ../RNA-Seq_analysis.sh
+    nano ../RNA-Seq_analysis.sh
     
   Execute the RNA-Seq pipeline
       
-      ../RNA-Seq_analysis.sh
-
-IMPORTANT: operate all scripts in this repository FROM your data directories!  All scripts are set with paths relative to your data directory.
+    ../RNA-Seq_analysis.sh
 
 To generate PCA plots:
