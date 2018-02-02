@@ -1,3 +1,5 @@
+#SET YOUR VARIABLES HERE
+
 #Specify the filename under which your GEO accession list is saved.
 GEO_list='insert filename'
 
