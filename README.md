@@ -15,7 +15,9 @@ To generate count matrices from raw .sra files:
     
       nano ../RNA-Seq_analysis.sh
     
-  Execute ../RNA-Seq_analysis.sh
+  Execute the RNA-Seq pipeline
+      
+      ../RNA-Seq_analysis.sh
 
 IMPORTANT: operate all scripts in this repository FROM your data directories!  All scripts are set with paths relative to your data directory.
 
