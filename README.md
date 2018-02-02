@@ -24,7 +24,7 @@ To generate count matrices from raw .sra files:
   
     ../downloads.sh
   
-  Edit the variables in RNA-Seq_analysis.sh to reflect the parameters of your data.  i.e., the name of your accession list, whether the sequenced reads are single-end or paired-end ('SE' and 'PE', respectively), and whether the data came from human or rat cells ('hg38' and 'Rnor6.0', respectively).
+  Edit the variables in RNA-Seq_analysis.sh to reflect the parameters of your data.  i.e., whether the sequenced reads are single-end or paired-end ('SE' and 'PE', respectively) and whether the data came from human or rat cells ('hg38' and 'Rnor6.0', respectively).
     
     nano ../RNA-Seq_analysis.sh
     
