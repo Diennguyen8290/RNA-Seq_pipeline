@@ -1,13 +1,15 @@
 #Specify the filename under which your GEO accession list is saved.
-GEO_list='GSE73727_list'
+GEO_list='insert filename'
 
 #Specify whether the library in question is single-end ('SE') or paired-end ('PE').
-library='SE'
+library='SE or PE'
 
 #Specify from which organism your data is coming from.  Human='hg38', rat ='Rnor6.0' 
-organism='hg38'
+organism='hg38 or Rnor6.0'
 
-#CONVERT .SRA TO .FASTQ
+#######################################################################################################
+
+#FASTQ-DUMP
 for i in $(cat ${GEO_list}); do
   qsub -v IN=${i} ../fastq-dump_${library}.pbs &
 done
@@ -64,7 +66,7 @@ if [ ${library} = 'SE' ]; then
   done
 elif [ ${library} = 'PE' ]; then
   for i in $(cat ${GEO_list}); do
-#    until [ -f ${i}_2.fastq ]; do
+    until [ -f ${i}_2_val_2.fq ]; do
       sleep 5
     done
   done
