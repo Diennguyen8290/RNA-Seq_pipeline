@@ -19,7 +19,7 @@ Important!  All scripts in this repository are set with paths relative to your d
 To generate count matrices from raw .sra files:
   Download your dataset
   
-    downloads.sh
+    ../downloads.sh
   
   Edit the variables in RNA-Seq_analysis.sh to reflect the parameters of your data.
     
