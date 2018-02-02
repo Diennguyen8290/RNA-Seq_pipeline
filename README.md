@@ -16,7 +16,7 @@ Important!  All scripts in this repository are set with paths relative to your d
 
     cd data
   
-###############################################################################################
+#############################################################################################
 
 To generate count matrices from raw .sra files:
   
