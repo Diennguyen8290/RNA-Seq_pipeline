@@ -18,7 +18,7 @@ Important!  All scripts in this repository are set with paths relative to your d
 
     cd data
   
-#############################################################################################
+##############################################################################################
 
 To generate count matrices from raw .sra files:
   
@@ -34,6 +34,6 @@ To generate count matrices from raw .sra files:
       
     ../RNA-Seq_analysis.sh
 
-#############################################################################################
+##############################################################################################
 
 To generate PCA plots:
