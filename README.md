@@ -1,6 +1,8 @@
 # DNM_mRNA-Seq_analysis
 
-Clone this repository to your working directory using
+While logged onto hpc-cmb.usc.edu,
+
+clone this repository to your working directory using
 
     git clone https://github.com/dmanahan/DNM_mRNA-Seq_analysis.git
 
