@@ -1,4 +1,4 @@
-# DNM_mRNA-Seq_analysis
+# RNA-Seq analysis
 
 While logged onto hpc-cmb.usc.edu,
 
