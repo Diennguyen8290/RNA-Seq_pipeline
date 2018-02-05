@@ -11,7 +11,6 @@
 cd "$PBS_O_WORKDIR"
 
 ref_genome=~/cmb/STAR_index_hg38
-gtf_file=~/cmb/gencode.v27.annotation.gtf
 
 STAR --outFileNamePrefix ${IN} \
       --quantMode GeneCounts \
