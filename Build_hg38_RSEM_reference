@@ -1,0 +1,1 @@
+rsem-prepare-reference --gtf ~/cmb/gencode.v27.annotation.gtf --star ~/staging/GRCh38.p10.genome.fa ~/staging/RSEM_hg38_reference/
