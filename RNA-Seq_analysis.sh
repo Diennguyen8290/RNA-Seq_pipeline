@@ -14,13 +14,13 @@ for i in $(cat accession_list); do
 done
 
 if [ ${library} = 'SE' ]; then
-  for i in $(cat ${GEO_list}); do
+  for i in $(cat accession_list); do
     until [ -f ${i}.fastq ]; do
       sleep 5
     done
   done
 elif [ ${library} = 'PE' ]; then
-  for i in $(cat ${GEO_list}); do
+  for i in $(cat accession_list); do
     until [ -f ${i}_2.fastq ]; do
       sleep 5
     done
@@ -36,13 +36,13 @@ for i in $(cat accession_list); do
 done
 
 if [ ${library} = 'SE' ]; then
-  for i in $(cat ${GEO_list}); do
+  for i in $(cat accession_list); do
     until [ -f ${i}_fastqc.html ]; do
       sleep 5
     done
   done
 elif [ ${library} = 'PE' ]; then
-  for i in $(cat ${GEO_list}); do
+  for i in $(cat accession_list); do
     until [ -f ${i}_2_val_2_fastqc.html ]; do
       sleep 5
     done
@@ -58,13 +58,13 @@ for i in $(cat accession_list); do
 done
 
 if [ ${library} = 'SE' ]; then
-  for i in $(cat ${GEO_list}); do
+  for i in $(cat accession_list); do
     until [ -f ${i}_trimmed_fastqc.html ]; do
       sleep 5
     done
   done
 elif [ ${library} = 'PE' ]; then
-  for i in $(cat ${GEO_list}); do
+  for i in $(cat accession_list); do
     until [ -f ${i}_2_val_2.fq ]; do
       sleep 5
     done
