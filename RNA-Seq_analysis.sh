@@ -87,5 +87,5 @@ done
 
 #HTSeq
 for i in $(cat accession_list); do
-  qsub -v IN=${i} ../HTSeq-counts.pbs &
+  qsub -v IN=${i} ../htseq_${organism}.pbs &
 done
