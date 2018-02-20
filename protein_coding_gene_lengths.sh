@@ -1,8 +1,10 @@
-#Define your variables
+#Define your variables.
 path_to_gtf='gencode.v27.annotation.gtf'
 
 #Please select which protein-coding feature you want to serve as your reference.  'CDS', 'gene', or 'transcript'.
 coding_feature='transcript'
+
+#The final output for this script are two text files: 'coding_gene_lengths.txt" and 'coding_genes.txt'.  The former includes ENSEMBL IDs and gene lengths in rows, while the latter just has the ENSEMBL IDs.  The former is designed to serve as a reference to generate TPM values from RPM counts produced by STAR, while the latter is used to pull out protein coding genes from RNA-Seq datasets for differential gene expression analyses with our mRNA-Seq datasets.
 
 ################################################################################################################
 
