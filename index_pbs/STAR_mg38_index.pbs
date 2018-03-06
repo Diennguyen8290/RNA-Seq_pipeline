@@ -13,7 +13,7 @@ cd "$PBS_O_WORKDIR"
 mkdir STAR_mg38_index
 cd STAR_mg38_index
 
-STAR --runThreadN 8 --runMode genomeGenerate \
+STAR --runThreadN 1 --runMode genomeGenerate \
      --genomeFastaFiles ../GRCm38.p5.genome.fa \
      --genomeDir $PWD \
      --sjdbGTFfile ../gencode.vM16.annotation.gtf \
