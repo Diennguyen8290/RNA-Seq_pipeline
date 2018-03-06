@@ -1,7 +1,7 @@
-#PBS -N fastqc_${IN}
-#PBS -e fastqc_${IN}.error
-#PBS -o fastqc_${IN}.out
-#PBS -l nodes=1:ppn=14
+#PBS -N fastqc_SE
+#PBS -e ${IN}_fastqc_SE.error
+#PBS -o ${IN}_fastqc_SE.out
+#PBS -l nodes=1:ppn=1
 #PBS -l mem=10000MB
 #PBS -l vmem=10000MB
 #PBS -l pmem=10000MB
@@ -10,4 +10,4 @@
 #!/bin/bash
 cd "$PBS_O_WORKDIR"
 
-fastqc ${IN}.fastq
+fastqc ../FASTQ-DUMP/${IN}.fastq
