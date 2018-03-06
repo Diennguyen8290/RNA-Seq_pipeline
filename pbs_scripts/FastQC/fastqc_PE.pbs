@@ -1,0 +1,14 @@
+#PBS -N fastqc_PE
+#PBS -e ${IN}_fastqc_PE.error
+#PBS -o ${IN}_fastqc_PE.out
+#PBS -l nodes=1:ppn=1
+#PBS -l mem=10000MB
+#PBS -l vmem=10000MB
+#PBS -l pmem=10000MB
+#PBS -l walltime=10:00:00
+#PBS -q cmb
+#!/bin/bash
+cd "$PBS_O_WORKDIR"
+
+fastqc ../FASTQ-DUMP/${IN}_1.fastq
+fastqc ../FASTQ-DUMP/${IN}_2.fastq
