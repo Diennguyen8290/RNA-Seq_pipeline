@@ -1,4 +1,4 @@
-#PBS -N ${IN}_TrimGalore_SE
+#PBS -N TrimGalore_SE
 #PBS -e ${IN}_TrimGalore_SE.error
 #PBS -o ${IN}_TrimGalore_SE.out
 #PBS -l nodes=1:ppn=1
