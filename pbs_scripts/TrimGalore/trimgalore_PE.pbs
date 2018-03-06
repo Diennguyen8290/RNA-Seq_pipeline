@@ -1,0 +1,13 @@
+#PBS -N TrimGalore_PE
+#PBS -e ${PE}_TrimGalore_PE.error
+#PBS -o ${PE}_TrimGalore_PE.out
+#PBS -l nodes=1:ppn=11
+#PBS -l mem="10000MB"
+#PBS -l pmem="10000MB"
+#PBS -l vmem="10000MB"
+#PBS -l walltime=10:00:00
+#PBS -q cmb
+#!/bin/bash
+cd "$PBS_O_WORKDIR"
+
+trim_galore --fastqc --paired ../FASTQ-DUMP/${IN}_1.fastq ../FASTQ-DUMP/${IN}_2.fastq
