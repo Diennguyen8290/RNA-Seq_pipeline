@@ -10,4 +10,4 @@
 #!/bin/bash
 cd "$PBS_O_WORKDIR"
 
-trim_galore --fastqc ${IN}.fastq
+trim_galore --fastqc ../FASTQ-DUMP/${IN}.fastq
