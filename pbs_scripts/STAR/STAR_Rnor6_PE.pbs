@@ -1,0 +1,26 @@
+#PBS -N STAR_Rnor6_PE
+#PBS -e ${IN}_STAR_Rnor6_PE.error
+#PBS -o ${IN}_STAR_Rnor6_PE.out
+#PBS -l nodes=1:ppn=14
+#PBS -l mem=50000MB
+#PBS -l vmem=50000MB
+#PBS -l pmem=50000MB
+#PBS -l walltime=10:00:00
+#PBS -q cmb
+#!/bin/bash
+cd "$PBS_O_WORKDIR"
+
+ref_genome=../../STAR_index_Rnor6
+
+STAR --outFileNamePrefix ${IN} \
+      --quantMode GeneCounts \
+      --readFilesCommand cat \
+      --outSAMtype BAM SortedByCoordinate \
+      --bamRemoveDuplicatesType UniqueIdentical \
+      --runThreadN 14 \
+      --outBAMsortingThreadN 14 \
+      --outWigType wiggle \
+      --outWigStrand Unstranded \
+      --outWigNorm None \
+      --genomeDir ${ref_genome} \
+      --readFilesIn ../TRIMGALORE/${IN}_1_val_1.fq ../TRIMGALORE/${IN}_2_val_2.fq
