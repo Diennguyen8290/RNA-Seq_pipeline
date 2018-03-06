@@ -6,10 +6,6 @@ clone this repository to your working directory using
 
     git clone https://github.com/dmanahan/DNM_mRNA-Seq_analysis.git
 
-and make all scripts executable with
-
-    chmod 775 *
-
 For each of your datasets, create a sub-directory (hence forth referred to here as a "data directory") within your working directory
     
     mkdir data
@@ -26,7 +22,7 @@ To generate count matrices from raw .sra files:
   
     ../downloads.sh
   
-  Edit the variables in RNA-Seq_analysis.sh to reflect the parameters of your data.  i.e., whether the sequenced reads are single-end or paired-end ('SE' and 'PE', respectively) and whether the data came from human or rat cells ('hg38' and 'Rnor6.0', respectively).
+  Edit the variables in RNA-Seq_analysis.sh to reflect the parameters of your data.  i.e., whether the sequenced reads are single-end or paired-end ('SE' and 'PE', respectively) and whether the data came from human, rat, or mouse cells ('hg38', 'Rnor6', and 'mg38', respectively).
     
     nano ../RNA-Seq_analysis.sh
     
