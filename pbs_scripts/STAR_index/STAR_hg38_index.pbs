@@ -19,3 +19,5 @@ STAR --runThreadN 1 --runMode genomeGenerate \
      --sjdbGTF \
      --genomeDir $PWD \
 --sjdbGTFfile ../gencode.v27.annotation.gtf \
+
+cd ..
