@@ -1,4 +1,4 @@
-PBS -N STARindex
+#PBS -N STARindex
 #PBS -e STARindex.error
 #PBS -o STARindex.out
 #PBS -l nodes=1:ppn=1
