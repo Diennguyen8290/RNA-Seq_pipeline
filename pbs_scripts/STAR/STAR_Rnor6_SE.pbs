@@ -10,7 +10,7 @@
 #!/bin/bash
 cd "$PBS_O_WORKDIR"
 
-ref_genome=../../STAR_Rnor6_index
+ref_genome=../../STAR_index_Rnor6
 
 STAR --outFileNamePrefix ${IN} \
       --quantMode GeneCounts \
