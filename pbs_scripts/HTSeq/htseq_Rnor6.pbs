@@ -10,4 +10,4 @@
 #!/bin/bash
 cd "$PBS_O_WORKDIR"
 
-samtools view ../STAR/${IN}Aligned.sortedByCoord.out.bam | htseq-count - ../../Rattus_norvegicus.Rnor_6.0.91.chr.gtf --stranded=no > count_${IN}.txt
+samtools view ../STAR/${IN}Aligned.sortedByCoord.out.bam | htseq-count - ../../genome_references/Rattus_norvegicus.Rnor_6.0.91.chr.gtf --stranded=no > count_${IN}.txt
