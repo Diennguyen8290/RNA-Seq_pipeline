@@ -5,7 +5,7 @@
 #PBS -l  mem=50000MB
 #PBS -l vmem=50000MB
 #PBS -l pmem=50000MB
-#PBS -l walltime=400:00:00
+#PBS -l walltime=10:00:00
 #PBS -q cmb
 #!/bin/bash
 cd "$PBS_O_WORKDIR"
@@ -13,7 +13,8 @@ cd "$PBS_O_WORKDIR"
 mkdir STAR_Rnor6_index
 cd STAR_Rnor6_index
 
-STAR --runThreadN 1 --runMode genomeGenerate \
+STAR --runThreadN 14
+     --runMode genomeGenerate \
      --genomeFastaFiles ../GCF_000001895.5_Rnor_6.0_genomic.fa \
      --genomeDir $PWD \
      --sjdbGTFfile ../Rattus_norvegicus.Rnor_6.0.91.chr.gtf \
