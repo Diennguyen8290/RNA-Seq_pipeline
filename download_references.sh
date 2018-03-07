@@ -12,7 +12,15 @@ wget ftp://ftp.ensembl.org/pub/release-91/gtf/rattus_norvegicus/Rattus_norvegicu
 wget ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M16/GRCm38.primary_assembly.genome.fa.gz
 wget ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M16/gencode.vM16.annotation.gtf.gz
 
+mkdir genome_references
+mv -t genome_references GRCh38.primary_assembly.genome.fa.gz gencode.v27.annotation.gtf.gz GCF_000001895.5_Rnor_6.0_genomic.fna.gz Rattus_norvegicus.Rnor_6.0.91.chr.gtf.gz GRCm38.primary_assembly.genome.fa.gz gencode.vM16.annotation.gtf.gz
+cd genome_references
+
 #Unzip all compressed fasta and .gtf files.
 gunzip -vf *gz
 
 mv GCF_000001895.5_Rnor_6.0_genomic.fna GCF_000001895.5_Rnor_6.0_genomic.fa
+
+cd ..
+
+
