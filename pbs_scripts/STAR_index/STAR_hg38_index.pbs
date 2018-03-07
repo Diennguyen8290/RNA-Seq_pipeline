@@ -14,7 +14,7 @@ mkdir STAR_hg38_index
 cd STAR_hg38_index
 
 STAR --runThreadN 1 --runMode genomeGenerate \
-     --genomeFastaFiles ../GRCh38.p10.genome.fa \
+     --genomeFastaFiles ../GRCh38.primary_assembly.genome.fa \
      --genomeDir $PWD \
      --sjdbGTF \
      --genomeDir $PWD \
