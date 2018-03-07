@@ -14,3 +14,5 @@ wget ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M16/gencode
 
 #Unzip all compressed fasta and .gtf files.
 gunzip -vf *gz
+
+mv GCF_000001895.5_Rnor_6.0_genomic.fna GCF_000001895.5_Rnor_6.0_genomic.fa
