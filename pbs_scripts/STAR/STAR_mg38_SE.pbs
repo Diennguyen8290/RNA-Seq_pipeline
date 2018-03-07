@@ -1,7 +1,7 @@
 #PBS -N STAR_mg38_SE
 #PBS -e ${IN}_STAR_mg38_SE.error
 #PBS -o ${IN}_STAR_mg38_SE.out
-#PBS -l nodes=1:ppn=1
+#PBS -l nodes=1:ppn=14
 #PBS -l mem=50000MB
 #PBS -l vmem=50000MB
 #PBS -l pmem=50000MB
