@@ -10,4 +10,4 @@
 #!/bin/bash
 cd "$PBS_O_WORKDIR"
 
-samtools view ../STAR/${IN}Aligned.sortedByCoord.out.bam | htseq-count - ../../gencode.vM16.annotation.gtf --stranded=no > count_${IN}.txt
+samtools view ../STAR/${IN}Aligned.sortedByCoord.out.bam | htseq-count - ../../genome_references/gencode.vM16.annotation.gtf --stranded=no > count_${IN}.txt
