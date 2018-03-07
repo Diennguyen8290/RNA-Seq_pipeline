@@ -11,3 +11,6 @@ wget ftp://ftp.ensembl.org/pub/release-91/gtf/rattus_norvegicus/Rattus_norvegicu
 #Downlaod mouse genome fasta (sequence) and .gtf (annotation) files from GENCODE.
 wget ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M16/GRCm38.primary_assembly.genome.fa.gz
 wget ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M16/gencode.vM16.annotation.gtf.gz
+
+#Unzip all compressed fasta and .gtf files.
+gunzip -vf *gz
