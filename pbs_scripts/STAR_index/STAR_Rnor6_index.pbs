@@ -17,3 +17,4 @@ STAR --runThreadN 1 --runMode genomeGenerate \
      --genomeFastaFiles ../GCF_000001895.5_Rnor_6.0_genomic.fa \
      --genomeDir $PWD \
      --sjdbGTFfile ../Rattus_norvegicus.Rnor_6.0.91.chr.gtf \
+cd ..
