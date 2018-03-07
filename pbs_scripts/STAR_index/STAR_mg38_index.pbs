@@ -14,6 +14,6 @@ mkdir STAR_mg38_index
 cd STAR_mg38_index
 
 STAR --runThreadN 1 --runMode genomeGenerate \
-     --genomeFastaFiles ../GRCm38.p5.genome.fa \
+     --genomeFastaFiles ../GRCm38.primary_assembly.genome.fa \
      --genomeDir $PWD \
 --sjdbGTFfile ../gencode.vM16.annotation.gtf \
