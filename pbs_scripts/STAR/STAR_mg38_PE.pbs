@@ -1,7 +1,7 @@
 #PBS -N STAR_mg38_PE
 #PBS -e ${IN}_STAR_mg38_PE.error
 #PBS -o ${IN}_STAR_mg38_PE.out
-#PBS -l nodes=1:ppn=1
+#PBS -l nodes=1:ppn=14
 #PBS -l mem=50000MB
 #PBS -l vmem=50000MB
 #PBS -l pmem=50000MB
@@ -17,8 +17,8 @@ STAR --outFileNamePrefix ${IN} \
       --readFilesCommand cat \
       --outSAMtype BAM SortedByCoordinate \
       --bamRemoveDuplicatesType UniqueIdentical \
-      --runThreadN 1 \
-      --outBAMsortingThreadN 1 \
+      --runThreadN 14 \
+      --outBAMsortingThreadN 14 \
       --outWigType wiggle \
       --outWigStrand Unstranded \
       --outWigNorm None \
