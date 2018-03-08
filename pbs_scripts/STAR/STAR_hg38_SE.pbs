@@ -18,7 +18,7 @@ STAR --outFileNamePrefix ${IN} \
       --outSAMtype BAM SortedByCoordinate \
       --bamRemoveDuplicatesType UniqueIdentical \
       --runThreadN 14 \
-      --outBAMsortingThreadN 1 \
+      --outBAMsortingThreadN 14 \
       --outWigType wiggle \
       --outWigStrand Unstranded \
       --outWigNorm None \
