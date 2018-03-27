@@ -1,27 +1,24 @@
-#Define your variables.
-path_to_gtf='gencode.v27.annotation.gtf'
+#Define your variables
+path_to_gtf='../../genome_references/Rattus_norvegicus.Rnor_6.0.91.chr.gtf'
 
 #Please select which protein-coding feature you want to serve as your reference.  'CDS', 'gene', or 'transcript'.
-coding_feature='transcript'
+feature='gene'
 
-#The final output for this script are two text files: 'coding_gene_lengths.txt" and 'coding_genes.txt'.  The former includes ENSEMBL IDs
-#and gene lengths in rows, while the latter just has the ENSEMBL IDs.  The former is designed to serve as a reference to generate TPM
-#values from RPM counts produced by STAR, while the latter is used to pull out protein coding genes from RNA-Seq datasets for 
-#differential gene expression analyses with our mRNA-Seq datasets.
-
+################################################################################################################
+#PRODUCING PROTEIN CODE GENE LIST AND GENE LENGTHS
 ################################################################################################################
 
 #From the .gtf file, create a text file with ONLY protein coding genes.
 cat ${path_to_gtf} | grep 'protein' > output0.txt
 
-if [ ${coding_feature} = 'CDS' ]; then
+if [ ${feature} = 'CDS' ]; then
   #Extract CDS region information ONLY
   cat output0.txt | grep 'CDS' > output1.txt
   sed -i '/CCDS/d' output1.txt
-elif [ ${coding_feature} = 'gene' ]; then
+elif [ ${feature} = 'gene' ]; then
   #Extract gene information ONLY
   sed '/transcript/d' output0.txt > output1.txt
-elif [ ${coding_feature} = 'transcript' ]; then
+elif [ ${feature} = 'transcript' ]; then
   #Extract transcript information ONLY
   cat output0.txt | grep 'transcript' > output1.txt
   sed -i '/exon/d' output1.txt
@@ -29,8 +26,7 @@ else
   echo 'Please specify whether you want genes, transcripts, or CDS regions to serve as your reference.'
 fi
 
-#Extract the ENSEMBL gene name and gene length from .txt.  NOTE that transcripts will be assigned to same gene name and will appear 
-#as duplicates.
+#Extract the ENSEMBL gene name and gene length from .txt.  NOTE that transcripts will be assigned to same gene name and will appear as duplicates.
 awk '{print $10 "\t" ($5 - $4)}' output1.txt > output2.txt
 
 #Remove all quotes from our protein coding gene list.
@@ -56,6 +52,23 @@ awk '
 ' output2.txt > output3.txt
 
 #Sort the protein coding ENSEMBL IDs and gene lengths alphabetically by ENSEMBL ID.
-sort output3.txt > coding_gene_lengths_${coding_feature}.txt
-sed -i '/__/d' coding_gene_lengths_${coding_feature}.txt
-awk '{$2=""; print $0}' coding_gene_lengths_${coding_feature}.txt > coding_genes_${coding_feature}.txt
+sort output3.txt > coding_gene_lengths_${feature}.txt
+sed -i '/__/d' coding_gene_lengths_${feature}.txt
+awk '{$2=""; print $0}' coding_gene_lengths_${feature}.txt > coding_genes_${feature}.txt
+
+################################################################################################################
+#USING PROTEIN-CODING GENE LIST AS A REFERENCE TO EXTRACT PROTEIN-CODING GENES FROM RNA-SEQ COUNT MATRICES
+################################################################################################################
+
+#Extract protein-coding genes from your HTSeq-count file
+for i in $(cat ../accession_list); do
+  for j in $(cat coding_genes_${feature}.txt); do cat count_${i}.txt | grep ${j} >> output_${i}.txt; done;
+done
+
+#Sort the curated count matrices
+for i in $(cat ../accession_list); do
+  sort output_${i}.txt > curated_count${i}_${feature}.txt
+done
+
+#Remove intermediate files
+rm output*
