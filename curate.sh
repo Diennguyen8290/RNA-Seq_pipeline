@@ -1,13 +1,20 @@
-#Define your variables
-path_to_gtf='../../genome_references/Rattus_norvegicus.Rnor_6.0.91.chr.gtf'
-
+#Please define which organism is being profiled with your RNA-Seq count matrices.
+organism='human, rat, or mouse'
 #Please select which protein-coding feature you want to serve as your reference.  'CDS', 'gene', or 'transcript'.
-feature='gene'
+feature='CDS, gene, or transcript'
 
 ################################################################################################################
 #PRODUCING PROTEIN CODE GENE LIST AND GENE LENGTHS
 ################################################################################################################
-
+if [ ${organism} = 'human' ]; then
+  path_to_gtf='../../genome_references/gencode.v27.annotation.gtf'
+elif [ ${organism} = 'rat' ]; then
+  path_to_gtf='../../genome_references/Rattus_norvegicus.Rnor_6.0.91.chr.gtf'
+elif [ ${organism} = 'rat' ]; then
+  path_to_gtf='../../genome_references/gencode.vM16.annotation.gtf'
+else
+  echo 'Please specify whether your are querying human, rat, or mouse RNA-Seq count matrices'
+  
 #From the .gtf file, create a text file with ONLY protein coding genes.
 cat ${path_to_gtf} | grep 'protein' > output0.txt
 
