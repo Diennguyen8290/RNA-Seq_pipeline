@@ -1,14 +1,13 @@
-#PBS -N STAR_mg38_PE
-#PBS -e ${IN}_STAR_mg38_PE.error
-#PBS -o ${IN}_STAR_mg38_PE.out
-#PBS -l nodes=1:ppn=14
-#PBS -l mem=50000MB
-#PBS -l vmem=50000MB
-#PBS -l pmem=50000MB
-#PBS -l walltime=10:00:00
-#PBS -q cmb
+#SBATCH --job-name='STAR_mg38_PE'
+#SBATCH --error=${IN}_STAR_mg38_PE.error
+#SBATCH --output=${IN}_STAR_mg38_PE.out
+#SBATCH --ntasks=14
+#SBATCH --mem=50000MB
+#SBATCH --mem-per-cpu=50000MB
+#SBATCH --time=10:00:00
+#SBATCH --partition=cmb
 #!/bin/bash
-cd "$PBS_O_WORKDIR"
+cd "$SLURM_SUBMIT_DIR"
 
 ref_genome=../../STAR_mg38_index
 
