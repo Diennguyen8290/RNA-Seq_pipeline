@@ -1,14 +1,13 @@
-#PBS -N STARindex
-#PBS -e STARindex.error
-#PBS -o STARindex.out
-#PBS -l nodes=1:ppn=14
-#PBS -l  mem=50000MB
-#PBS -l vmem=50000MB
-#PBS -l pmem=50000MB
-#PBS -l walltime=400:00:00
-#PBS -q cmb
+#SBATCH --job-name='STARindex_hg38'
+#SBATCH --error=STARindex_hg38.error
+#SBATCH --output=STARindex_hg38.out
+#SBATCH --ntasks=14
+#SBATCH --mem=50000MB
+#SBATCH --mem-per-cpu=50000MB
+#SBATCH --time=10:00:00
+#SBATCH --partition=cmb
 #!/bin/bash
-cd "$PBS_O_WORKDIR"
+cd "$SLURM_SUBMIT_DIR"
 
 mkdir STAR_hg38_index
 cd STAR_hg38_index
