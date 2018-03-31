@@ -1,4 +1,4 @@
-#SBATCH --job-anme='fastqc_PE'
+#SBATCH --job-name='fastqc_PE'
 #SBATCH --error=${IN}_fastqc_PE.error
 #SBATCH --output=${IN}_fastqc_PE.out
 #SBATCH --ntasks=1
