@@ -14,7 +14,7 @@ mkdir FASTQ-DUMP
 cd FASTQ-DUMP
 
 for i in $(cat ../accession_list); do
-  qsub -v IN=${i} ../../pbs_scripts/fastq-dump/fastq-dump_${library}.pbs &
+  sbatch --export=IN=${i} ../../pbs_scripts/fastq-dump/fastq-dump_${library}_slurm.sh &
 done
 
 for i in $(cat ../accession_list); do
@@ -30,7 +30,7 @@ mkdir FASTQC
 cd FASTQC
 
 for i in $(cat ../accession_list); do
-  qsub -v IN=${i} ../../pbs_scripts/FastQC/fastqc_${library}.pbs &
+  qsub --export=IN=${i} ../../pbs_scripts/FastQC/fastqc_${library}_slurm.sh &
 done
 
 for i in $(cat ../accession_list); do
@@ -46,7 +46,7 @@ mkdir TRIMGALORE
 cd TRIMGALORE
 
 for i in $(cat ../accession_list); do
-  qsub -v IN=${i}  ../../pbs_scripts/TrimGalore/trimgalore_${library}.pbs &
+  sbatch --export=IN=${i}  ../../pbs_scripts/TrimGalore/trimgalore_${library}_slurm.sh &
 done
 
 for i in $(cat ../accession_list); do
@@ -62,7 +62,7 @@ mkdir STAR
 cd STAR
 
 for i in $(cat ../accession_list); do
-  qsub -v IN=${i} ../../pbs_scripts/STAR/STAR_${organism}_${library}.pbs &
+  sbatch --export=IN=${i} ../../pbs_scripts/STAR/STAR_${organism}_${library}_slurm.sh &
 done
 
 for i in $(cat ../accession_list); do
@@ -78,5 +78,5 @@ mkdir HTSeq
 cd HTSeq
 
 for i in $(cat ../accession_list); do
-  qsub -v IN=${i} ../../pbs_scripts/HTSeq/htseq_${organism}.pbs &
+  sbatch --export=IN=${i} ../../pbs_scripts/HTSeq/htseq_${organism}_slurm.sh &
 done
