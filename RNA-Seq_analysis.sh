@@ -1,13 +1,13 @@
 #SET YOUR VARIABLES HERE
 
 #Specify whether the library in question is single-end ('SE') or paired-end ('PE').
-library='SE'
+library='SE or PE'
 
 #Specify from which organism your data is coming from.  Human='hg38', rat='Rnor6', mouse='mg38'
-organism='hg38'
+organism='hg38, Rnor6, or mg38'
 
 #Specify whether you are starting from .fastq or .sra
-start='sra'
+start='sra or fastq'
 
 #######################################################################################################
 if [ ${start} = 'sra' ]; then
