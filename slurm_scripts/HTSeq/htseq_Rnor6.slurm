@@ -11,4 +11,4 @@
 cd "$SLURM_SUBMIT_DIR"
 
 samtools view ../STAR/${IN}Aligned.sortedByCoord.out.bam | htseq-count - ../../genome_references/Rattus_norvegicus.Rnor_6.0.91.chr.gtf --stranded=no > count_${IN}.txt
-echo 'htseq-count is complete' > check_${IN}.txt
+echo 'htseq-count's run has completed' > check_${IN}.txt
