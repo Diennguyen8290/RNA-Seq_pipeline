@@ -125,16 +125,9 @@ rm check*txt
 cd ..
 
 ################################################################################################################
-#FILTERING OUT NON-PROTEIN-CODING GENES BY PARSING THE .GTF FILE
+#FILTER OUT NON-PROTEIN-CODING GENES BY PARSING THE .GTF FILE AND NORMALIZE BY TPM
 ################################################################################################################
 mkdir Protein-coding_matrices
 cd Protein-coding_matrices
 
 ../../curate.sh ${organism} ${feature}
-
-################################################################################################################
-#NORMALIZE RAW RNA-SEQ COUNT DATA WITH TPM USING THE PROTEIN-CODING GENE LENGTHS LIST
-################################################################################################################
-for i in $(cat ../accession_list); do
-  ../../TPM.sh ../Protein-coding_matrices/curated_count_${i}_${feature}.txt ${feature};
-done
