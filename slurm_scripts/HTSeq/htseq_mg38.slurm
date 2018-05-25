@@ -1,7 +1,4 @@
 #!/bin/bash
-#SBATCH --job-name='count'
-#SBATCH --error=count.error
-#SBATCH --output=count.out
 #SBATCH --ntasks=1
 #SBATCH --mem=50000MB
 #SBATCH --mem-per-cpu=50000MB
