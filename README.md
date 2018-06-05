@@ -1,8 +1,8 @@
-RNA-SEQ COMPUTATIONAL WORKFLOW:
-GENERATING COUNT MATRICES FOR DIFFERENTIAL GENE EXPRESSION ANALYSIS
-VERSION 2, 5/21/18
+#RNA-SEQ COMPUTATIONAL WORKFLOW:
+#GENERATING COUNT MATRICES FOR DIFFERENTIAL GENE EXPRESSION ANALYSIS
+#VERSION 3, 6/4/18
 
-i	Useful terms
+#Useful terms
 •	RNA-Seq.  A Next-Generation Sequencing application to study and quantify transcriptomes.  This can be performed for single-cells or whole tissues, including primary cells and cell cultures.  There are many variation on the technique, but the biggest distinction is whether the sample contains protein coding transcripts only (mRNA-Seq) or the whole transcriptome (i.e. all RNAs, including rRNAs, tRNAs, siRNAs, lncRNAs).  The Stevens lab is mostly interested in mRNA-Seq, since this kind of data could be directly correlated to proteomic data (in theory).  Being a Next-Generation Sequencing technology application, RNA-Seq data is in the form of short reads (ranging from 50 to 300 bp).
 •	GEO – Gene Expression Omnibus.  The data depository where almost all gene expression data can be found.
 •	HPC cluster– High Powered Computing cluster.
